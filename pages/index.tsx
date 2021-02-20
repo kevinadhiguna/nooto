@@ -4,6 +4,7 @@ import { atomOneDark as style } from 'react-syntax-highlighter/dist/cjs/styles/h
 import { firebase } from '../src/initFirebase';
 import FirebaseAuth from '../src/firebaseAuth';
 import { useAuth } from '../src/authProvider';
+import { resolveHref } from 'next/dist/next-server/lib/router/router';
 
 // Setup instance of Database
 const db = firebase.database();
@@ -20,11 +21,12 @@ export default function Home() {
         Logout
       </button>
       <AddGist uid={user.uid} />
+      <Gists uid={user.uid} />
     </main>
   );
 }
 
-function AddGist({uid}: { uid: string }) {
+function AddGist( uid: { uid: string }) {
   const [file, setFile] = useState("");
   const [code, setCode] = useState("");
 
@@ -60,4 +62,26 @@ function AddGist({uid}: { uid: string }) {
       <button type="submit">Save</button>
     </form>
   );
+}
+
+function Gists(uid: { uid: string }) {
+  useEffect(() => {
+    const userGistsRef = db.ref(`userGists/${uid}`);
+    const refs = [userGistsRef];
+
+    userGistsRef.on("child_added", child => {
+      const key: string = child.key as string;
+      const gistRef = db.ref(`gists/${key}`);
+      refs.push(gistRef);
+      gistRef.on("value", snap => {
+        console.log(snap.val());
+      });
+    });
+
+    return () => {
+      refs.forEach(ref => ref.off());
+    }
+  }, []);
+
+  return <ul></ul>;
 }
