@@ -36,4 +36,8 @@ const AuthProvider: FunctionComponent = ({ children }) => {
     return <AuthContext.Provider value={{ user, loading, logout: () => firebase.auth().signOut() }}>{children}</AuthContext.Provider>
 }
 
-export { AuthProvider };
+function useAuth() {
+    return useContext(AuthContext);
+}
+
+export { AuthProvider, useAuth };
