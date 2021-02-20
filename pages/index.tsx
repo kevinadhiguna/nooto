@@ -144,9 +144,9 @@ function EditGist({
   gist, 
   close 
 }: { 
-  id: string, 
-  gist: IGist, 
-  close: () => void 
+  id: string; 
+  gist: IGist; 
+  close: () => void; 
 }) {
   const [file, setFile] = useState(gist.file);
   const [code, setCode] = useState(gist.code);
