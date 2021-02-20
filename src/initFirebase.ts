@@ -9,4 +9,13 @@ const config = {
     projectID: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID
 };
 
-export {};
+function initFirebase() {
+    // Check if Firebase is already initialized
+    if (!firebase.app.length) {
+        firebase.initializeApp(config);
+    }
+}
+
+initFirebase();
+
+export { firebase };
