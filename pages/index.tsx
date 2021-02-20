@@ -28,8 +28,23 @@ function AddGist({uid}: { uid: string }) {
   const [file, setFile] = useState("");
   const [code, setCode] = useState("");
 
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const gistRef = db.ref("gists").push();
+    await db.ref(`userGists/${uid}/${gistRef.key}`).set(true);
+    await gistRef.set({
+      uid, 
+      file, 
+      code
+    });
+
+    setFile("");
+    setCode("");
+  }
+
   return(
-    <form>
+    <form onSubmit={onSubmit}>
       <input 
         required
         type="text" 
