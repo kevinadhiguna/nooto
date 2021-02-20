@@ -19,6 +19,18 @@ export default function Home() {
       <button type="button" className="link" onClick={logout}>
         Logout
       </button>
+      <AddGist uid={user.uid} />
     </main>
+  );
+}
+
+function AddGist({uid}: { uid: string }) {
+  const [file, setFile] = useState("");
+  const [code, setCode] = useState("");
+
+  return(
+    <form>
+      <button type="submit">Save</button>
+    </form>
   );
 }
