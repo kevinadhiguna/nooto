@@ -100,7 +100,7 @@ function Gists(uid: { uid: string }) {
   );
 }
 
-function AddGist( uid: { uid: string }) {
+function AddGist({uid}: { uid: string }) {
   const [file, setFile] = useState("");
   const [code, setCode] = useState("");
 
