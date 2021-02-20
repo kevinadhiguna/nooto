@@ -30,6 +30,18 @@ function AddGist({uid}: { uid: string }) {
 
   return(
     <form>
+      <input 
+        required
+        type="text" 
+        placeholder="file.js"
+        value={file}
+        onChange={e => setFile(e.target.value)}
+      />
+      <textarea
+        required
+        value={code}
+        onChange={e => setCode(e.target.value)}
+      />
       <button type="submit">Save</button>
     </form>
   );
