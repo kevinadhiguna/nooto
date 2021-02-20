@@ -17,12 +17,20 @@ const firebaseAuthConfig = {
 };
 
 const FirebaseAuth: FunctionComponent = () => {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        setShow(true);
+    }, []);
+    
     return(
         <div>
-            <StyledFirebaseAuth 
-                uiConfig={firebaseAuthConfig} 
-                firebaseAuth={firebase.auth()}
-            />
+            {show && (
+                <StyledFirebaseAuth 
+                    uiConfig={firebaseAuthConfig} 
+                    firebaseAuth={firebase.auth()}
+                />
+            )}
         </div>
     );
 }
