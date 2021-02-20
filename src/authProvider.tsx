@@ -33,7 +33,13 @@ const AuthProvider: FunctionComponent = ({ children }) => {
         return () => cancelAuthListener();
     }, []);
 
-    return <AuthContext.Provider value={{ user, loading, logout: () => firebase.auth().signOut() }}>{children}</AuthContext.Provider>
+    return(
+        <AuthContext.Provider 
+            value={{ user, loading, logout: () => firebase.auth().signOut() }}
+        >
+            {children}
+        </AuthContext.Provider>
+    );
 }
 
 function useAuth() {
