@@ -1,9 +1,7 @@
+import { useAuth } from '../src/authProvider';
+
 export default function Home() {
-  const { user, loading, logout } = {
-    user: null,
-    loading: false,
-    logout: () => {}
-  };
+  const { user, loading, logout } = useAuth();
 
   if (loading) return null;
   if (!user) return <button className="link">Login</button>
