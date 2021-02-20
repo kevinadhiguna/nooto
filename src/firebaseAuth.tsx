@@ -4,7 +4,7 @@ import { firebase } from '../src/initFirebase';
 
 const firebaseAuthConfig = {
     signInFlow: 'popup',
-    signInOption : [
+    signInOptions : [
         {
             provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
             requireDisplayName: false,
