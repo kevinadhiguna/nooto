@@ -64,7 +64,15 @@ function AddGist( uid: { uid: string }) {
   );
 }
 
+interface IGist {
+  uid: string;
+  file: string;
+  code: string;
+}
+
 function Gists(uid: { uid: string }) {
+  const [gists, setGists] = useState<Record<string, IGist>>({});
+  
   useEffect(() => {
     const userGistsRef = db.ref(`userGists/${uid}`);
     const refs = [userGistsRef];
@@ -74,7 +82,7 @@ function Gists(uid: { uid: string }) {
       const gistRef = db.ref(`gists/${key}`);
       refs.push(gistRef);
       gistRef.on("value", snap => {
-        console.log(snap.val());
+
       });
     });
 
