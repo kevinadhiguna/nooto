@@ -11,7 +11,7 @@ const config = {
 
 function initFirebase() {
     // Check if Firebase is already initialized
-    if (!firebase.app.length) {
+    if (!firebase.apps.length) {
         firebase.initializeApp(config);
     }
 }
