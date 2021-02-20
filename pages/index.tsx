@@ -121,6 +121,7 @@ function AddGist({uid}: { uid: string }) {
 
   return(
     <form onSubmit={onSubmit}>
+      <h2>Add Gist</h2>
       <input 
         required
         type="text" 
