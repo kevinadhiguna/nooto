@@ -4,7 +4,6 @@ import { atomOneDark as style } from 'react-syntax-highlighter/dist/cjs/styles/h
 import { firebase } from '../src/initFirebase';
 import FirebaseAuth from '../src/firebaseAuth';
 import { useAuth } from '../src/authProvider';
-import { resolveHref } from 'next/dist/next-server/lib/router/router';
 
 // Setup instance of Database
 const db = firebase.database();
@@ -23,6 +22,81 @@ export default function Home() {
       <AddGist uid={user.uid} />
       <Gists uid={user.uid} />
     </main>
+  );
+}
+
+interface IGist {
+  uid: string;
+  file: string;
+  code: string;
+}
+
+const langs: Record<string, string> = {
+  js: "javascript",
+  rb: "ruby"
+}
+
+function getLanguage(file: string):string {
+  const parts = file.split(".");
+  const ext = parts[parts.length -1];
+  
+  return langs[ext] || "text";
+}
+
+function Gists(uid: { uid: string }) {
+  const [gists, setGists] = useState<Record<string, IGist>>({});
+  const [editing, setEditing] = useState("");
+
+  useEffect(() => {
+    const userGistsRef = db.ref(`userGists/${uid}`);
+    const refs = [userGistsRef];
+
+    userGistsRef.on("child_added", child => {
+      const key: string = child.key as string;
+      const gistRef = db.ref(`gists/${key}`);
+      refs.push(gistRef);
+      gistRef.on("value", snap => {
+        setGists(old => {
+          return { ...old, [key]: snap.val() }
+        });
+      });
+    });
+
+    return () => {
+      refs.forEach(ref => ref.off());
+    }
+  }, []);
+
+  return(
+    <ul>
+      {Object.entries(gists).map(([id, gist]) => (
+        <li key={id}>
+          {id === editing ? (
+            <EditGist 
+              id={id} 
+              gist={gist} 
+              close={() => setEditing("")} 
+            />
+          ) : (
+            <>
+              <h3>{gist.file}</h3>
+              <SyntaxHighlighter
+                style={style}
+                language={getLanguage(gist.file)}
+              >
+                {gist.code}
+              </SyntaxHighlighter>
+              <button 
+                type="button"
+                onClick={() => setEditing(id)}
+              >
+                Edit
+              </button>
+            </>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -64,32 +138,43 @@ function AddGist( uid: { uid: string }) {
   );
 }
 
-interface IGist {
-  uid: string;
-  file: string;
-  code: string;
-}
+function EditGist({ 
+  id, 
+  gist, 
+  close 
+}: { 
+  id: string, 
+  gist: IGist, 
+  close: () => void 
+}) {
+  const [file, setFile] = useState(gist.file);
+  const [code, setCode] = useState(gist.code);
 
-function Gists(uid: { uid: string }) {
-  const [gists, setGists] = useState<Record<string, IGist>>({});
-  
-  useEffect(() => {
-    const userGistsRef = db.ref(`userGists/${uid}`);
-    const refs = [userGistsRef];
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    userGistsRef.on("child_added", child => {
-      const key: string = child.key as string;
-      const gistRef = db.ref(`gists/${key}`);
-      refs.push(gistRef);
-      gistRef.on("value", snap => {
+    const gistRef = db.ref(`gists/${id}`);
+    gistRef.child("file").set(file);
+    gistRef.child("code").set(code);
 
-      });
-    });
+    close();
+  }
 
-    return () => {
-      refs.forEach(ref => ref.off());
-    }
-  }, []);
-
-  return <ul></ul>;
+  return(
+    <form onSubmit={onSubmit}>
+      <input 
+        required
+        type="text"
+        placeholder="file.js"
+        value={file} 
+        onChange={e => setFile(e.target.value)}
+      />
+      <textarea 
+        required
+        value={code}
+        onChange={e => setCode(e.target.value)}
+      />
+      <button type="submit">Save</button>
+    </form>
+  );
 }
