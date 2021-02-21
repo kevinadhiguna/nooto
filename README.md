@@ -12,7 +12,7 @@
     <a href="https://github.com/kevinadhiguna/nooto#getting-started"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/kevinadhiguna/nooto">View Demo</a>
+    <a href="https://github.com/kevinadhiguna/nooto#-demo">View Demo</a>
     ·
     <a href="https://github.com/kevinadhiguna/nooto/issues">Report Bug</a>
     ·
