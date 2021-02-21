@@ -57,11 +57,14 @@ button {
   cursor: pointer;
 }
 button.link {
-  background: none;
+  /* background: none; */
   border: none;
-  color: yellow;
+  color: #acfcd9;
   padding: 0px;
   font-size: 1rem;
+  background-color: #463239;
+  padding: 13px;
+  border-radius: 8px;
 }
 
 .board {
