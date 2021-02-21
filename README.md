@@ -1,7 +1,6 @@
 <p align="center">
   <a href="https://github.com/kevinadhiguna/nooto">
-    <!--<img src="images/logo.png" alt="Logo" width="80" height="80">-->
-    📝 Nooto
+    <img src="https://raw.githubusercontent.com/kevinadhiguna/nooto/master/assets/nooto.png" alt="Nooto logo">
   </a>
 
   <h3 align="center">Nooto</h3>
