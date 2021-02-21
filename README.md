@@ -8,10 +8,10 @@
   <p align="center">
     A web app to save your amazing gists!
     <br />
-    <a href="https://github.com/kevinadhiguna/nooto#getting-started"><strong>Explore the docs »</strong></a>
+    <a href="#getting-started"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/kevinadhiguna/nooto#-demo">View Demo</a>
+    <a href="#-demo">View Demo</a>
     ·
     <a href="https://github.com/kevinadhiguna/nooto/issues">Report Bug</a>
     ·
