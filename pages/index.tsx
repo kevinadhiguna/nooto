@@ -43,7 +43,7 @@ function getLanguage(file: string):string {
   return langs[ext] || "text";
 }
 
-function Gists(uid: { uid: string }) {
+function Gists({ uid }: { uid: string }) {
   const [gists, setGists] = useState<Record<string, IGist>>({});
   const [editing, setEditing] = useState("");
 
@@ -100,7 +100,7 @@ function Gists(uid: { uid: string }) {
   );
 }
 
-function AddGist({uid}: { uid: string }) {
+function AddGist({ uid }: { uid: string }) {
   const [file, setFile] = useState("");
   const [code, setCode] = useState("");
 
