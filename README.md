@@ -3,7 +3,7 @@
     <img src="https://raw.githubusercontent.com/kevinadhiguna/nooto/master/assets/nooto.png" alt="Nooto logo">
   </a>
 
-  <h3 align="center">Nooto</h3>
+  <h3 align="center">ノート</h3>
 
   <p align="center">
     A web app to save your amazing gists!
