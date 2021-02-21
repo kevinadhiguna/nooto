@@ -21,7 +21,9 @@
 </p>
 
 ## Demo
-<img src="https://raw.githubusercontent.com/kevinadhiguna/nooto/master/assets/nooto.gif" />
+<kbd>
+  <img src="https://raw.githubusercontent.com/kevinadhiguna/nooto/master/assets/nooto.gif" />
+</kbd>
 
 ## Getting Started
 
