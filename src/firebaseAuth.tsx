@@ -28,13 +28,13 @@ const FirebaseAuth: FunctionComponent = () => {
             {show && (
                 <>
                     <h2 style={{ display: 'flex', justifyContent: 'center' }}>
-                        Nooto
+                        Nooto 📝
                     </h2>
                     <h4 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '20px' }}>
                         Gist editing. Redefined.
                     </h4>
                     <h4 style={{ display: 'flex', justifyContent: 'center' }}>
-                        Login
+                        🔒 Login
                     </h4>
                     <StyledFirebaseAuth 
                         uiConfig={firebaseAuthConfig} 
