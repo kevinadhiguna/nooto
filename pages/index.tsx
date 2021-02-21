@@ -125,7 +125,7 @@ function AddGist({ uid }: { uid: string }) {
       <input 
         required
         type="text" 
-        placeholder="file.js"
+        placeholder="What is your filename ?"
         value={file}
         onChange={e => setFile(e.target.value)}
       />
@@ -166,7 +166,7 @@ function EditGist({
       <input 
         required
         type="text"
-        placeholder="file.js"
+        placeholder="What is your filename ?"
         value={file} 
         onChange={e => setFile(e.target.value)}
       />
