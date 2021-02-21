@@ -20,12 +20,12 @@
   </p>
 </p>
 
-## Demo
+## 🌟 Demo
 <kbd>
   <img src="https://raw.githubusercontent.com/kevinadhiguna/nooto/master/assets/nooto.gif" />
 </kbd>
 
-## Getting Started
+## 🌈 Getting Started
 
 First, intsall dependencies :
 ```bash
