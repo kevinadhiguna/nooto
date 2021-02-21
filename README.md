@@ -8,7 +8,7 @@
   <p align="center">
     A web app to save your amazing gists!
     <br />
-    <a href="#getting-started"><strong>Explore the docs »</strong></a>
+    <a href="#-getting-started"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="#-demo">View Demo</a>
