@@ -1,4 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://github.com/kevinadhiguna/nooto">
+    <!--<img src="images/logo.png" alt="Logo" width="80" height="80">-->
+    📝 Nooto
+  </a>
+
+  <h3 align="center">Nooto</h3>
+
+  <p align="center">
+    A web app to save your amazing gists!
+    <br />
+    <a href="https://github.com/kevinadhiguna/nooto"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/kevinadhiguna/nooto">View Demo</a>
+    ·
+    <a href="https://github.com/kevinadhiguna/nooto/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/kevinadhiguna/nooto/issues">Request a Feature</a>
+  </p>
+</p>
 
 ## Getting Started
 
