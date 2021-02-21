@@ -1,6 +1,6 @@
 import { FunctionComponent, useState, useEffect } from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { firebase } from '../src/initFirebase';
+import { firebase } from 'src/initFirebase';
 
 const firebaseAuthConfig = {
     signInFlow: 'popup',

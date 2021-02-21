@@ -1,9 +1,9 @@
 import { useState, useEffect, FormEvent } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark as style } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import { firebase } from '../src/initFirebase';
-import FirebaseAuth from '../src/firebaseAuth';
-import { useAuth } from '../src/authProvider';
+import { firebase } from 'src/initFirebase';
+import FirebaseAuth from 'src/firebaseAuth';
+import { useAuth } from 'src/authProvider';
 
 // Setup instance of Database
 const db = firebase.database();
