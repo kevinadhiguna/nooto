@@ -20,6 +20,9 @@
   </p>
 </p>
 
+## Demo
+<img src="https://raw.githubusercontent.com/kevinadhiguna/nooto/master/assets/nooto.gif" />
+
 ## Getting Started
 
 First, intsall dependencies :
