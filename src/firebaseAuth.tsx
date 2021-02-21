@@ -26,10 +26,21 @@ const FirebaseAuth: FunctionComponent = () => {
     return(
         <div>
             {show && (
-                <StyledFirebaseAuth 
-                    uiConfig={firebaseAuthConfig} 
-                    firebaseAuth={firebase.auth()}
-                />
+                <>
+                    <h2 style={{ display: 'flex', justifyContent: 'center' }}>
+                        Nooto
+                    </h2>
+                    <h4 style={{ display: 'flex', justifyContent: 'center', paddingBottom: '20px' }}>
+                        Gist editing. Redefined.
+                    </h4>
+                    <h4 style={{ display: 'flex', justifyContent: 'center' }}>
+                        Login
+                    </h4>
+                    <StyledFirebaseAuth 
+                        uiConfig={firebaseAuthConfig} 
+                        firebaseAuth={firebase.auth()}
+                    />
+                </>
             )}
         </div>
     );

@@ -80,3 +80,8 @@ button.link {
   border: 1px solid white;
   font-size: 2rem;
 }
+
+.loginTitle {
+  display: flex;
+  justify-content: center;
+}
