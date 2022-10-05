@@ -19,17 +19,24 @@
   </p>
 </p>
 
+<br />
+
 ## 🌟 Demo
+
 <kbd>
   <img src="https://raw.githubusercontent.com/kevinadhiguna/nooto/master/assets/nooto.gif" />
 </kbd>
+
+<br />
 
 ## 🌈 Getting Started
 
 First, intsall dependencies :
 ```bash
 npm install
-# or
+```
+or
+```bash
 yarn
 ```
 
@@ -37,7 +44,9 @@ Then run the development server:
 
 ```bash
 npm run dev
-# or
+```
+or
+```bash
 yarn dev
 ```
 
@@ -52,5 +61,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
+<br />
 
 ![Hello !](https://api.visitorbadge.io/api/VisitorHit?user=kevinadhiguna&repo=nooto&label=thanks%20for%20dropping%20in%20!&labelColor=%23000000&countColor=%23FFFFFF)
